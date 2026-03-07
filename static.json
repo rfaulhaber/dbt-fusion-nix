@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0-preview.145",
+  "dbt": {
+    "url": "https://public.cdn.getdbt.com/fs/cli/fs",
+    "hashes": {
+      "x86_64-unknown-linux-gnu": "sha256-zBXGLPFSuP8FLXKO0f7Qqmj2v7konwfDu0++P34AagM=",
+      "aarch64-unknown-linux-gnu": "sha256-Ik6o3ir+EJB980Nt6gptlAmvYxtH5x4ZrLaD+Z1NUw4=",
+      "x86_64-apple-darwin": "sha256-hss/9mkI4KYDnMNplqj4WfFR4Ao2gHee12l91rg1UKU=",
+      "aarch64-apple-darwin": "sha256-u0ljgUQ5Dp3rhsIdzfvtayP0yfoR+esRGJddHX5zR+0="
+    }
+  },
+  "lsp": {
+    "url": "https://public.cdn.getdbt.com/fs/lsp/fs-lsp",
+    "hashes": {
+      "x86_64-unknown-linux-gnu": "sha256-3LhKCRxpgdJA/YD3mxl23dzwXV7WiN06scAjtpim6PQ=",
+      "aarch64-unknown-linux-gnu": "sha256-WDH/+aA3hdeBJY/x914LC6DfbKu5rr3SO1ChNewqRwI=",
+      "x86_64-apple-darwin": "sha256-s8O75XXhtJDBFIe8Qitn8hdmkJXGph3k8W091I7fths=",
+      "aarch64-apple-darwin": "sha256-/L2sQQqw72i99Gs3avea84IHP8414TvbufzmdZoWVOs="
+    }
+  },
+  "targets": {
+    "x86_64-linux": "x86_64-unknown-linux-gnu",
+    "aarch64-linux": "aarch64-unknown-linux-gnu",
+    "x86_64-darwin": "x86_64-apple-darwin",
+    "aarch64-darwin": "aarch64-apple-darwin"
+  }
+}

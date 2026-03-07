@@ -1,0 +1,32 @@
+name: Update dbt Fusion hashes
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Install nushell
+        run: nix profile install nixpkgs#nushell
+
+      - name: Run update script
+        run: nu update_static.nu
+
+      - name: Commit and push if changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git diff --exit-code static.json && exit 0
+          version=$(jq -r .version static.json)
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add static.json
+          git commit -m "update dbt Fusion to v${version}"
+          git push
