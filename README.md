@@ -11,15 +11,15 @@ Packages the `dbt` CLI and `dbt-lsp` language server for `x86_64-linux`, `aarch6
 ### Run directly
 
 ```sh
-nix run github:your-org/dbt-fusion-nix        # dbt CLI
-nix run github:your-org/dbt-fusion-nix#dbt-lsp # LSP server
+nix run github:rfaulhaber/dbt-fusion-nix        # dbt CLI
+nix run github:rfaulhaber/dbt-fusion-nix#dbt-lsp # LSP server
 ```
 
 ### In a flake
 
 ```nix
 {
-  inputs.dbt-fusion.url = "github:your-org/dbt-fusion-nix";
+  inputs.dbt-fusion.url = "github:rfaulhaber/dbt-fusion-nix";
 
   outputs = { dbt-fusion, ... }: {
     # use packages directly
@@ -35,7 +35,7 @@ nix run github:your-org/dbt-fusion-nix#dbt-lsp # LSP server
 ### Imperatively
 
 ```sh
-NIXPKGS_ALLOW_UNFREE=1 nix profile install github:your-org/dbt-fusion-nix --impure
+NIXPKGS_ALLOW_UNFREE=1 nix profile install github:rfaulhaber/dbt-fusion-nix --impure
 ```
 
 > **Note:** dbt Fusion is unfree software, so `--impure` with `NIXPKGS_ALLOW_UNFREE=1` (or the equivalent nixpkgs config) is required.
