@@ -26,7 +26,7 @@ jobs:
           git diff --exit-code static.json && exit 0
           version=$(jq -r .version static.json)
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add static.json
           git commit -m "update dbt Fusion to v${version}"
           git push
