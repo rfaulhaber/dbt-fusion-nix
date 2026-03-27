@@ -1,21 +1,21 @@
 {
-  "version": "2.0.0-preview.154",
+  "version": "2.0.0-preview.163",
   "dbt": {
     "url": "https://public.cdn.getdbt.com/fs/cli/fs",
     "hashes": {
-      "x86_64-unknown-linux-gnu": "sha256-lfMnlX7tk7H/FfT5hAQkI5JogFARL9nrDUqjlhESS/E=",
-      "aarch64-unknown-linux-gnu": "sha256-X0F0YLLEqXDJlSon3v0TMbUaUvF8eU/vfkks/xHsITA=",
-      "x86_64-apple-darwin": "sha256-niKQuBVH44NnWK19a7vNrsO0OILsoLQYPG/SxBRtKwY=",
-      "aarch64-apple-darwin": "sha256-aHXNP2kATBdhn4RM2UVz3Up5JJ6iH6fBW/Ogm1Dv6o4="
+      "x86_64-unknown-linux-gnu": "sha256-HegWHbTjglC1bOTCFjzw0PH3Gm/NyjFWsVimG2s3uPQ=",
+      "aarch64-unknown-linux-gnu": "sha256-HhyXgx9WPwQRYAkcIPCkC5ninFCgrYbkUNKccVynvW8=",
+      "x86_64-apple-darwin": "sha256-zrPAVYJSv3ZzxAAY1v3BAQXBHCoI129J7HWgnGWMH+s=",
+      "aarch64-apple-darwin": "sha256-nOD9W1h2MhLPcK03qTFdIeWEE9kwDAPRcYGBd0iE5ZY="
     }
   },
   "lsp": {
     "url": "https://public.cdn.getdbt.com/fs/lsp/fs-lsp",
     "hashes": {
-      "x86_64-unknown-linux-gnu": "sha256-qkMq6uDaeWC5wK5rtuFzMj0PvcYKQAIsLQlKrcpyfnw=",
-      "aarch64-unknown-linux-gnu": "sha256-wcxCRk967Zee16v54VoEbge6Xmg5fQEZQBKOrAYwmM0=",
-      "x86_64-apple-darwin": "sha256-CxsVQau9VDv5OtLx/ZgUDiPR1hRVvepm/Pui3vY3yYU=",
-      "aarch64-apple-darwin": "sha256-yROwFdeFF1ReNg26erhvNLyrtrp6O6KfSbk+GWraF6E="
+      "x86_64-unknown-linux-gnu": "sha256-rIcs8FZRp6Hr07CmKE3LbpBtFTU+PmbIjRdVrvD1vfE=",
+      "aarch64-unknown-linux-gnu": "sha256-Kjv+RRRrwGBRpAPAe/l4AKlcSSic1Cvpr2/T1ev8o1o=",
+      "x86_64-apple-darwin": "sha256-8dRHu8+FLr92XmQKYUv2QqsTjHsNd0r7p3dQSdl0OVo=",
+      "aarch64-apple-darwin": "sha256-JuZBjE/L1bjuktvkPqX5Aj+UgtlG7w0kDHoGjmKxlTk="
     }
   },
   "targets": {
