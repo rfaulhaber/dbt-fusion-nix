@@ -7,10 +7,12 @@
   target,
   hash,
   urlPrefix,
+  description,
 }: let
-  lib = pkgs.lib;
+  inherit (pkgs) lib stdenv;
+  isLinux = stdenv.hostPlatform.isLinux;
 in
-  pkgs.stdenv.mkDerivation {
+  stdenv.mkDerivation {
     inherit pname version;
 
     src = pkgs.fetchurl {
@@ -18,32 +20,35 @@ in
       url = "${urlPrefix}-v${version}-${target}.tar.gz";
     };
 
+    # The tarball expands to a single binary at its root, not into a
+    # versioned subdirectory — disable stdenv's default cd-into-subdir.
     sourceRoot = ".";
 
-    nativeBuildInputs = lib.optionals pkgs.stdenv.hostPlatform.isLinux [
-      pkgs.autoPatchelfHook
-    ];
+    nativeBuildInputs = lib.optional isLinux pkgs.autoPatchelfHook;
 
-    buildInputs = lib.optionals pkgs.stdenv.hostPlatform.isLinux [
-      pkgs.stdenv.cc.cc.lib # libstdc++/libgcc_s
-      pkgs.openssl
-      pkgs.zlib
-    ];
+    # The binary's only non-glibc NEEDED entry is libgcc_s (verified via
+    # `ldd`); stdenv.cc.cc.lib provides it. autoPatchelfHook is a no-op on
+    # other deps because the binary doesn't reference them.
+    buildInputs = lib.optional isLinux stdenv.cc.cc.lib;
 
     dontConfigure = true;
     dontBuild = true;
 
     installPhase = ''
       runHook preInstall
-      install -Dm755 ${pname} $out/bin/${pname}
+
+      bin=$(find . -type f -perm -u+x -print -quit)
+      if [ -z "$bin" ]; then
+        echo "mkdbt: no executable found in tarball for ${pname}" >&2
+        exit 1
+      fi
+      install -Dm755 "$bin" "$out/bin/${pname}"
+
       runHook postInstall
     '';
 
     meta = {
-      description =
-        if pname == "dbt"
-        then "dbt Fusion engine CLI — next-generation dbt, written in Rust"
-        else "dbt Fusion Language Server Protocol (LSP) server";
+      inherit description;
       homepage = "https://docs.getdbt.com/docs/fusion/about-fusion";
       license = lib.licenses.unfree;
       platforms = systems;

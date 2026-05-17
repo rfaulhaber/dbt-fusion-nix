@@ -24,9 +24,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git diff --exit-code static.json && exit 0
-          version=$(jq -r .version static.json)
+          dbt_version=$(jq -r .dbt.version static.json)
+          lsp_version=$(jq -r .lsp.version static.json)
+          if [ "$dbt_version" = "$lsp_version" ]; then
+            msg="update dbt Fusion to v${dbt_version}"
+          else
+            msg="update dbt Fusion: dbt v${dbt_version}, dbt-lsp v${lsp_version}"
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add static.json
-          git commit -m "update dbt Fusion to v${version}"
+          git commit -m "$msg"
           git push
