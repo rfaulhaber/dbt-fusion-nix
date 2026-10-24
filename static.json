@@ -1,12 +1,12 @@
 {
   "dbt": {
-    "version": "2.1.0.dev20261023",
+    "version": "2.1.0.dev20261024",
     "url": "https://public.cdn.getdbt.com/fs/cli/fs",
     "hashes": {
-      "x86_64-unknown-linux-gnu": "sha256-CZD3msNwf9axJvGKoQLFoGSN7REDNlp160lRFmJBwBw=",
-      "aarch64-unknown-linux-gnu": "sha256-Z8OvkpPukU25FJj5JlG9AzYNOwZ2pSSIPCOKbFR2Wag=",
-      "x86_64-apple-darwin": "sha256-IAsOq/s/89DsppCQP6tu9dJi2Kqws3QDoN75l8dj0V4=",
-      "aarch64-apple-darwin": "sha256-IKKdqw8Z3yEFxZ71uPh9rs34DSFnDVhCVFwxG1IGmUY="
+      "x86_64-unknown-linux-gnu": "sha256-fmbCFRufFpraRLalhawbMZQJFgBqvAFUealD4OCg+Ik=",
+      "aarch64-unknown-linux-gnu": "sha256-N+TEzlzjOX7YSNSsdwjR4V4nFCuBSeLDvi4lrMxaFWA=",
+      "x86_64-apple-darwin": "sha256-BBZoGvNgJoYVMD7ihdm2X19pMBvELffQT9him9Yzjnc=",
+      "aarch64-apple-darwin": "sha256-86nibs8GFr/JX37DMH5LpD5w4Bgj+hiINfUSeIbu0Ak="
     }
   },
   "lsp": {
